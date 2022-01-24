@@ -1,0 +1,31 @@
+.container{
+    background: #1b1b1b;
+    color: #fff;
+    ul{
+        height: 70px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 85px;
+        li{
+            list-style-type: none;
+            a{
+                margin: 0 10px;
+                padding: 5px 15px; 
+                border-radius: 14px;
+                transition: all 0.2s ease;
+                
+               
+                &:hover{
+                    background: #646464;
+                    color: rgb(0, 0, 0);
+                }
+            }
+            .active{
+                background: #646464;
+                    color: rgb(0, 0, 0);
+            }
+        }
+    }
+}

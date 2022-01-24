@@ -1,0 +1,20 @@
+.container{
+ 
+    padding: 20px;
+    h1{
+        text-align: center;
+    }
+    .description{
+   
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 40px;
+
+        p{
+            height: fit-content;
+            width: 40%;
+            font-size: 1.2rem;
+        }
+    }
+}
