@@ -3,7 +3,7 @@ import style from "../../styles/prodotto.module.scss"
 import { useRouter } from "next/router";
 
 export default function Product({ product }) {
-  const router = useRouter;
+  const router = useRouter();
 
  if(router.isFallback){
    return <h1>loading</h1>
@@ -32,14 +32,15 @@ export async function getStaticProps({ params }) {
     props: {
       product: data,
     },
+    revalidate: 10,
   };
 }
 
 export async function getStaticPaths(){
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
-  const newData = await data.slice(0,10)
-  console.log("ciao")
+  const newData = await data.slice(0,3);
+
   
   const paths = newData.map(product => {
     return {
