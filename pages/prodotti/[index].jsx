@@ -1,8 +1,14 @@
 import Layout from "../../Layouts/Layout";
 import style from "../../styles/prodotto.module.scss"
-
+import { useRouter } from "next/router";
 
 export default function Product({ product }) {
+  const router = useRouter;
+
+ if(router.isFallback){
+   return <h1>loading</h1>
+ }
+
   return (
     <Layout>
       <div className={style.container}>
@@ -21,6 +27,7 @@ export async function getStaticProps({ params }) {
   const res = await fetch(`https://fakestoreapi.com/products/${params.index}`);
   const data = await res.json();
 
+  console.log("genero pagina ")
   return {
     props: {
       product: data,
@@ -31,8 +38,10 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths(){
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
-
-  const paths = data.map(product => {
+  const newData = await data.slice(0,10)
+  console.log("ciao")
+  
+  const paths = newData.map(product => {
     return {
       params: {
         index: `${product.id}`
@@ -42,6 +51,6 @@ export async function getStaticPaths(){
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
   }
 } 

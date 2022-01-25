@@ -2,7 +2,6 @@ import Layout from "../../Layouts/Layout";
 import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import style from "../../styles/prodotti.module.scss";
-import LoadingCard from "../../components/LoadingCard";
 const array = new Array(20).fill("asd");
 import Link from "next/link";
 
