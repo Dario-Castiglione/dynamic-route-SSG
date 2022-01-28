@@ -27,6 +27,11 @@ export async function getStaticProps({ params }) {
   const res = await fetch(`https://fakestoreapi.com/products/${params.index}`);
   const data = await res.json();
 
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
   console.log("genero pagina ")
   return {
     props: {
