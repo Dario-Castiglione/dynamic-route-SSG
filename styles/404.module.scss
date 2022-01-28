@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .img{
+        width: 500px;
+    }
+    p{
+        margin: 0 80px;
+        font-size: 2rem;
+        position: relative;
+        top: -120px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}
