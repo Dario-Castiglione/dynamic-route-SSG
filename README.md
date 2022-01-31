@@ -9,4 +9,4 @@
     <li>ISR</li>
  </ul>
 
-<a href="dynamic-route-ssg.vercel.app/" >Preview</a>
+<a href="https://dynamic-route-ssg.vercel.app/" >Preview</a>
